@@ -1,7 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def inicio(request):
-    return HttpResponse("<h1> Caballero esa utilizando django</h1>")
+def  index(request):
+    return HttpResponse("pagina del index ")
+
+
+
+
+def inicio(request, username):
+    print(username)  # Imprimirá el username en la consola
+    return HttpResponse(f"<h1> Caballero, está utilizando Django. Prueba de parámetros: {username}</h1>")  # Muestra el username
+
 def about(request):
-    return HttpResponse('Eres un Imbecil .l.')
+    return HttpResponse('Esta es la página de "Acerca de".')
